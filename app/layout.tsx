@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Link from "next/link";
 import Navbar from "@/components/landingpage/Navbar";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "LeetInsight",
@@ -40,6 +41,7 @@ export default function RootLayout({
               </Link>
             </p>
           </footer>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
