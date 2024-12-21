@@ -65,8 +65,8 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
 
               {/* Problem Solving Section */}
               <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">Problem Solving</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 md:gap-6 text-center">
+                <h3 className="text-xl font-semibold">Problem Solving</h3>
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-4 gap-4 md:gap-6 text-center">
                   <ProblemTypeCard
                     type="Total"
                     solved={data.totalSolved}
@@ -97,10 +97,8 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
               {/* Contest Performance */}
               {data.userContestRanking && (
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    Contest Performance
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                  <h3 className="text-xl font-semibold">Contest Performance</h3>
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     <StatItem
                       icon={<Users />}
                       label="Contests Attended"
@@ -201,7 +199,7 @@ function ProblemTypeCard({
       <p className="text-2xl font-bold mb-1">
         {solved}/{total}
       </p>
-      <Progress value={percentage} className="h-2" />
+      <Progress value={percentage} className="h-2 mt-3" />
     </div>
   );
 }
