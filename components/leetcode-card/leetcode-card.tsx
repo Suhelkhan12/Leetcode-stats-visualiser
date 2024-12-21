@@ -21,13 +21,20 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
     const cardElement = document.getElementById("card-content");
 
     if (cardElement) {
-      html2canvas(cardElement, { allowTaint: true, useCORS: true }).then(
-        (canvas) => {
-          canvas.toBlob((blob) => {
-            saveAs(blob, "LeetCode_Stats_Card.png"); // Save as PNG or change to your desired format
-          });
-        }
-      );
+      html2canvas(cardElement, {
+        allowTaint: true,
+        useCORS: true,
+        backgroundColor: null,
+        logging: true,
+      }).then((canvas) => {
+        canvas.toBlob((blob) => {
+          if (blob) {
+            saveAs(blob, "LeetCode_Stats_Card.png");
+          } else {
+            console.error("Failed to generate image blob");
+          }
+        });
+      });
     }
   };
   return (
@@ -36,7 +43,7 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
         <>
           <Card
             id="card-content"
-            className="w-full max-w-3xl mt-8 mx-auto overflow-hidden bg-gradient-to-br from-[#f59e0b] via-[#f97316] to-[#ea580c] text-white shadow-xl"
+            className="w-full rounded-none max-w-3xl mt-8 mx-auto overflow-hidden bg-gradient-to-br from-[#f59e0b] via-[#f97316] to-[#ea580c] text-white shadow-xl"
           >
             <div className="p-6 md:p-8 backdrop-blur-sm bg-white/10">
               {/* Profile Section */}
@@ -142,7 +149,7 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
           </div>
         </>
       ) : (
-        <Card className="max-w-3xl w-full mx-auto">
+        <Card className="max-w-3xl w-full mx-auto mt-6">
           <CardHeader>
             <CardTitle>Enter your user name</CardTitle>
             <CardDescription>
