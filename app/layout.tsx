@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import Link from "next/link";
+import Navbar from "@/components/landingpage/Navbar";
 
 export const metadata: Metadata = {
   title: "LeetInsight",
@@ -23,11 +23,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ThemeSwitcher />
-          <main>
+          <Navbar />
+          <main className=" pt-24 sm:px-0 px-5">
             <div className="container mx-auto">{children}</div>
           </main>
-          <footer className="mt-16 text-center text-sm opacity-70 dark:text-white container mx-auto">
+          <footer className="mt-16 sm:p-0 px-5 text-center text-sm opacity-70 dark:text-white container mx-auto pb-4">
             <p>
               &copy; {new Date().getFullYear()} LeetCode Stats Visualizer. Made
               with love by{" "}
