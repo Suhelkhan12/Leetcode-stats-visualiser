@@ -1,10 +1,11 @@
 "use client";
-import { startTransition, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LeetCodeStatsCard from "../leetcode-card/leetcode-card";
 import InputForm from "./input-form";
 import { Loader } from "lucide-react";
 import { UserData } from "@/lib/types";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 const CardGenerator = () => {
   const [username, setUsername] = useState<string | null>(null);
@@ -25,7 +26,6 @@ const CardGenerator = () => {
           );
           if (response.ok) {
             const data = await response.json();
-            // console.log(data);
             const { matchedUser, userContestRanking } = data;
             const username = matchedUser.username;
             const profilePicture = matchedUser.profile.userAvatar;
@@ -72,22 +72,18 @@ const CardGenerator = () => {
               badges,
               userContestRanking: userContestRankingData,
             });
-
-            console.log({
-              userContestRankingData,
-            });
           } else {
-            console.error("Error fetching user data");
+            setUserData(null);
+            throw new Error("Incorrect response");
           }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (err) {
+          toast.warning("This username do not exists.");
         } finally {
           setLoading(false);
         }
       };
-      startTransition(() => {
-        fetchUserData();
-      });
+      fetchUserData();
       setUsername(null);
     }
   }, [username]);
@@ -102,7 +98,7 @@ const CardGenerator = () => {
       </h2>
 
       {!userData ? (
-        <InputForm setUsername={setUsername} />
+        <InputForm setUsername={setUsername} isLoading={loading} />
       ) : (
         <div className="flex items-center justify-center">
           <Button onClick={() => setUserData(null)}>Generate new</Button>

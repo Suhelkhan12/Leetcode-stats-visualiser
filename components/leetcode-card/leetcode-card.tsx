@@ -31,7 +31,7 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
           if (blob) {
             saveAs(blob, "LeetCode_Stats_Card.png");
           } else {
-            console.error("Failed to generate image blob");
+            throw new Error("Failed to generate blob image");
           }
         });
       });

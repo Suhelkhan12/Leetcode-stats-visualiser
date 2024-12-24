@@ -23,9 +23,10 @@ const formSchema = z
 
 type InputFormProps = {
   setUsername: React.Dispatch<React.SetStateAction<string | null>>;
+  isLoading: boolean;
 };
 
-const InputForm = ({ setUsername }: InputFormProps) => {
+const InputForm = ({ setUsername, isLoading }: InputFormProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,6 +48,7 @@ const InputForm = ({ setUsername }: InputFormProps) => {
         <FormField
           control={form.control}
           name="username"
+          disabled={isLoading}
           render={({ field }) => (
             <FormItem className=" max-w-md w-full">
               <FormControl>
@@ -56,7 +58,9 @@ const InputForm = ({ setUsername }: InputFormProps) => {
             </FormItem>
           )}
         />
-        <Button type="submit">Generate card</Button>
+        <Button type="submit" disabled={isLoading}>
+          Generate card
+        </Button>
       </form>
     </Form>
   );
