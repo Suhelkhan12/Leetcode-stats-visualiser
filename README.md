@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# LeetCode Card Generator
+
+LeetCode Card Generator is a web application built using Next.js, ShadCN UI, and LeetCode's GraphQL API. The app allows users to generate personalized cards displaying their LeetCode stats and progress, which they can share on social media or use as badges on platforms like GitHub.
+
+
+
+## 🌟Features
+
+- **Real-Time Stats**: Fetch and display LeetCode user stats, including total problems solved, ranking, and streaks.
+- **Customization**: Customize card appearance with themes, colors, and layout options.
+- **Responsive Design**: Optimized for all screen sizes.
+- **Shareable Links**: Generate a shareable link or downloadable image of the card.
+- **SEO Optimized**: Fast and discoverable using Next.js.
+
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)  
+- **UI Components**: [ShadCN UI](https://shadcn.dev/)  
+- **Data Source**: [LeetCode GraphQL API](https://leetcode.com/graphql)  
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)  
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v18 or higher)
+- npm or yarn
+- A valid LeetCode account
+
+### Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Suhelkhan12/Leetcode-stats-visualiser
+   cd leetcode-card-generator
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set Environment Variables**:
+   Create a `.env.local` file in the root directory and add the following:
+   ```env
+   NEXT_PUBLIC_LEETCODE_API=https://leetcode.com/graphql
+   ```
+
+4. **Run the Development Server**:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   Visit [http://localhost:3000](http://localhost:3000) to view the app in development mode.
+
+### Build for Production
+
+To create an optimized production build:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Enter your LeetCode username in the input field.
+2. Customize your card using the available options.
+3. Preview your card and copy the shareable link or download the image.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Screenshots
 
-## Learn More
+### Home Page
+![Home Page](https://cdn.jsdelivr.net/gh/Suhelkhan12/Leetcode-stats-visualiser@latest/public/Screenshot%202024-12-25%20at%2011.28.38%E2%80%AFPM.png)
 
-To learn more about Next.js, take a look at the following resources:
+### Generated Card Example
+![Generated Card](https://cdn.jsdelivr.net/gh/Suhelkhan12/Leetcode-stats-visualiser@latest/public/Screenshot%202024-12-25%20at%2011.28.59%E2%80%AFPM.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app communicates with LeetCode's GraphQL API to fetch user data. Make sure the LeetCode API endpoint is accessible and functional. If you encounter issues, check your network and endpoint configuration.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app is designed to be deployed on [Vercel](https://vercel.com/):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push your code to a GitHub repository.
+2. Connect your repository to Vercel.
+3. Configure environment variables on Vercel.
+4. Deploy the app with a single click.
+
+## Acknowledgments
+
+- [LeetCode](https://leetcode.com/) for the API
+- [Next.js](https://nextjs.org/) and [ShadCN UI](https://shadcn.dev/) for the tech stack
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+---
+
+Feel free to explore the app and share your feedback! 🎉
+## Acknowledgements
+
+ - [ffmpeg.wasm](https://ffmpegwasm.netlify.app/) for the powerful video processing library.
+
+ - [shadcn UI](https://ui.shadcn.com/) ffor the incredible UI components.
