@@ -16,6 +16,11 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { UserData } from "@/lib/types";
 import { Button } from "../ui/button";
 
+const TOTAL=3399;
+const EASY=845;
+const MEDIUM=1772;
+const HARD=782;
+
 export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
   const handleDownload = () => {
     const cardElement = document.getElementById("card-content");
@@ -70,25 +75,25 @@ export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
                   <ProblemTypeCard
                     type="Total"
                     solved={data.totalSolved}
-                    total={3395}
+                    total={TOTAL}
                     bgColor="bg-[#3182ce]"
                   />
                   <ProblemTypeCard
                     type="Easy"
                     solved={data.easySolved}
-                    total={844}
+                    total={EASY}
                     bgColor="bg-[#00b8a3]"
                   />
                   <ProblemTypeCard
                     type="Medium"
                     solved={data.mediumSolved}
-                    total={1771}
+                    total={MEDIUM}
                     bgColor="bg-[#ffc01e]"
                   />
                   <ProblemTypeCard
                     type="Hard"
                     solved={data.hardSolved}
-                    total={780}
+                    total={HARD}
                     bgColor="bg-[#ff375f]"
                   />
                 </div>
