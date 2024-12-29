@@ -104,8 +104,3 @@ The app is designed to be deployed on [Vercel](https://vercel.com/):
 ---
 
 Feel free to explore the app and share your feedback! 🎉
-## Acknowledgements
-
- - [ffmpeg.wasm](https://ffmpegwasm.netlify.app/) for the powerful video processing library.
-
- - [shadcn UI](https://ui.shadcn.com/) ffor the incredible UI components.
