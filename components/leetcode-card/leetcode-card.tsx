@@ -17,9 +17,9 @@ import { UserData } from "@/lib/types";
 import { Button } from "../ui/button";
 
 const TOTAL=3416;
-const EASY=849;
-const MEDIUM=1779;
-const HARD=788;
+const EASY=850;
+const MEDIUM=1782;
+const HARD=789;
 
 export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
   const handleDownload = () => {
