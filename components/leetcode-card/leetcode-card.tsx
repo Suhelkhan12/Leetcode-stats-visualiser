@@ -16,10 +16,10 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { UserData } from "@/lib/types";
 import { Button } from "../ui/button";
 
-const TOTAL=3430;
-const EASY=852;
-const MEDIUM=1786;
-const HARD=792;
+const TOTAL=3435;
+const EASY=853;
+const MEDIUM=1789;
+const HARD=793;
 
 export default function LeetCodeStatsCard({ data }: { data: UserData | null }) {
   const handleDownload = () => {
